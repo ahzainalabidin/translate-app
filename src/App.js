@@ -1,3 +1,4 @@
+import './styles.css';
 import React, { useState } from "react";
 import Field from "./components/field";
 import Translate from "./components/translate";
@@ -10,10 +11,10 @@ function App() {
 
   return (
     <div>
-      <Field />
-      <Languages />
+      <Field onChange={setText} />
+      <Languages language={language} onLanguageChange={setLanguage} />
       <hr />
-      <Translate />
+      <Translate text={text} language={language} />
     </div>
   );
 }
